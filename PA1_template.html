@@ -342,7 +342,7 @@ cbind(mean, median)
 activityfill$date1&lt;-weekdays(as.Date(activityfill$date))
 nrecords&lt;-nrow(activityfill)
 for (i in 1:nrecords) {
-  ## determine the value of the steps interpolant
+  ## create weekend/weekday indicator variable
   if (activityfill$date1[i] %in% c(&quot;Saturday&quot;,&quot;Sunday&quot;)) {
     activityfill$daytype[i]&lt;-&quot;Weekend&quot;}
   else {activityfill$daytype[i]&lt;-&quot;Weekday&quot;}

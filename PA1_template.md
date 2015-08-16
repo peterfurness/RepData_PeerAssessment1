@@ -153,7 +153,7 @@ In this step we use the date variable to split the analysis between weekdays and
 activityfill$date1<-weekdays(as.Date(activityfill$date))
 nrecords<-nrow(activityfill)
 for (i in 1:nrecords) {
-  ## determine the value of the steps interpolant
+  ## create weekend/weekday indicator variable
   if (activityfill$date1[i] %in% c("Saturday","Sunday")) {
     activityfill$daytype[i]<-"Weekend"}
   else {activityfill$daytype[i]<-"Weekday"}
